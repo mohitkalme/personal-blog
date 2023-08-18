@@ -32,8 +32,6 @@ const page = async ({ params: { slug } }: Props) => {
 
   const data: TagData[] = await client.fetch(query);
 
-  console.log(data);
-
   const tagData: TagData[] = data.filter((tag: TagData) => {
     return tag.title.toLowerCase() == slug.toLowerCase();
   });

@@ -8,6 +8,11 @@ import { groq } from "next-sanity";
 import Skills from "@/components/Skills";
 import RecentProjects from "@/components/RecentProjects";
 
+export const metadata = {
+  title: "Mohit's Blog App",
+  description: "This is a blog web app",
+};
+
 const query = groq`
 *[_type=='post'] {
   ...,

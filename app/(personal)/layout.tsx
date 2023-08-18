@@ -1,12 +1,8 @@
+"use client";
 import "../globals.css";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata = {
-  title: "Mohit's Blog App",
-  description: "This is a blog web app",
-};
 
 import { ThemeProvider } from "next-themes";
 import SectionContainer from "../../components/SectionContainer";
