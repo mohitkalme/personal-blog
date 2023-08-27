@@ -13,11 +13,21 @@ import formatDate from "@/lib/utils/formatDate";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "@/components/RichTextComponents";
 
+import type { Metadata } from "next";
+
 type Props = {
   params: {
     slug: string;
   };
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const title = params.slug.split("-").join(" ");
+
+  return {
+    title: `${title}`,
+  };
+}
 
 const page = async ({ params: { slug } }: Props) => {
   const query = groq`

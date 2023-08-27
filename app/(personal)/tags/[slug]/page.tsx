@@ -7,6 +7,8 @@ import { groq } from "next-sanity";
 import formatDate from "@/lib/utils/formatDate";
 import Tag from "@/components/Tag";
 
+import type { Metadata } from "next";
+
 type Props = {
   params: {
     slug: string;
@@ -17,6 +19,16 @@ type TagData = {
   title: string;
   posts: Post[];
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // read route params
+  const id = params.slug;
+
+  return {
+    title: `#${id} - Blog`,
+  };
+}
+
 const page = async ({ params: { slug } }: Props) => {
   const query = groq`
   *[_type == "category" ]{

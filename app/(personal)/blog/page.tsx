@@ -7,6 +7,13 @@ import { groq } from "next-sanity";
 import formatDate from "@/lib/utils/formatDate";
 import Tag from "@/components/Tag";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mohit's Blog",
+  description: "This is a Blog page of Mohit kalme.",
+};
+
 const query = groq`
 *[_type=='post'] {
   ...,

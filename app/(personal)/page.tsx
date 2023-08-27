@@ -8,9 +8,12 @@ import { groq } from "next-sanity";
 import Skills from "@/components/Skills";
 import RecentProjects from "@/components/RecentProjects";
 
-export const metadata = {
-  title: "Mohit's Blog App",
-  description: "This is a blog web app",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mohit's Portfolio",
+  description:
+    "Mohit kalme is a web developer. He specializes in creating beautiful and user-friendly websites that meet the needs of her clients. Visit her portfolio website to see her work and learn more about her services.",
 };
 
 const query = groq`
